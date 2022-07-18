@@ -1,5 +1,8 @@
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.TreeSet;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -9,7 +12,8 @@ public class Main {
     }
 
     public static ArrayList<Integer> getNums(int[] nums) {
-        // your code here
-        return null;
+        return new ArrayList<Integer>(){{
+            addAll(Arrays.stream(nums).filter(s -> s > 25).boxed().collect(Collectors.toList()));
+        }};
     }
 }
