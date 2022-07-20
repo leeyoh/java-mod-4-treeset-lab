@@ -12,8 +12,15 @@ public class Main {
     }
 
     public static ArrayList<Integer> getNums(int[] nums) {
+        TreeSet<Integer> tSet = new TreeSet<>();
+        for(int n : nums){
+            if(n > 25){
+                tSet.add(n);
+            }
+        }
+
         return new ArrayList<Integer>(){{
-            addAll(Arrays.stream(nums).filter(s -> s > 25).boxed().collect(Collectors.toList()));
+            addAll(tSet);
         }};
     }
 }
